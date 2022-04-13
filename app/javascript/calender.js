@@ -15,6 +15,15 @@ document.addEventListener('turbolinks:load', function() {
       center: 'title',
       end: 'today prev,next' 
     },
+    buttonText: {
+      today: '今日',
+      month: '月',
+    },
+    expandRows: true,
+    height: "auto",
+    dayCellContent: function(e) {
+      e.dayNumberText = e.dayNumberText.replace('日', '');
+    },
   });
 
   
