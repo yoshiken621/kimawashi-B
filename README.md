@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+records_table
 
-Things you may want to cover:
+| Column                | Type    | Options                   |
+| ------------------------------------------------------------|
+| incident_id           | integer | null: false               |
+| met_person            | text    |                           |
 
-* Ruby version
+users_table
 
-* System dependencies
+| Column                | Type    | Options                   |
+| ------------------------------------------------------------|
+| nickname              | string  | null: false               |
+| email                 | string  | null: false, unique: true |
+| encrypted_password    | string  | null: false               |
 
-* Configuration
+has_many :open_records
 
-* Database creation
+open_records_table
+| Column          | Type        | Options                        |
+| ---------------------------------------------------------------|
+| user            | references  | null: false, foreign_key: true |
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+belongs_to :users
