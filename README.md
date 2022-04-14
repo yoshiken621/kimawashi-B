@@ -4,7 +4,7 @@ events_table
 
 | Column                | Type    | Options                   |
 | ------------------------------------------------------------|
-| events_id             | integer | null: false               |
+| events_select_id      | integer | null: false               |
 | met_person            | text    |                           |
 
 users_table
