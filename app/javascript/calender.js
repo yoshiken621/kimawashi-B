@@ -10,8 +10,16 @@ document.addEventListener('turbolinks:load', function() {
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
     firstDay: 1,
+    customButtons: {
+      myCustomButton: {
+        text: 'みんなの投稿',
+        click: function(){
+          open("GET", "/",false);
+        }
+      }
+    },
     headerToolbar: {
-      start: '',
+      start: 'myCustomButton',
       center: 'title',
       end: 'today prev,next' 
     },
@@ -19,6 +27,7 @@ document.addEventListener('turbolinks:load', function() {
       today: '今日',
       month: '月',
     },
+    
     expandRows: true,
     height: "auto",
     dayCellContent: function(e) {
