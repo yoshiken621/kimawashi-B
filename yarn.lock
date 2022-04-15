@@ -936,6 +936,14 @@
     "@fullcalendar/common" "~5.11.0"
     tslib "^2.1.0"
 
+"@fullcalendar/moment@^5.11.0":
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/moment/-/moment-5.11.0.tgz#83eb16863dac1880712c198a89a8c8edd2d9e1d0"
+  integrity sha512-zrlqGkgWS0y//Ym+Zf5txh7zhn8UOUtAQ263ZuXdAEJSRDc68GAz+fseDwnsZ1itv+sE86dfmjww9yIt740akg==
+  dependencies:
+    "@fullcalendar/common" "~5.11.0"
+    tslib "^2.1.0"
+
 "@gar/promisify@^1.0.1":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
@@ -4289,6 +4297,11 @@ jest-worker@^25.4.0:
   dependencies:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
+
+jquery@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+  integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
 
 js-base64@^2.1.8:
   version "2.6.4"

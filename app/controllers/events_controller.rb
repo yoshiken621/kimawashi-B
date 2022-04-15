@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
   def index
+    @events = Event.all
   end
 
   def new
@@ -18,6 +19,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:image, :events_select_id, :met_person)
+    params.require(:event).permit(:image, :date, :events_select_id, :met_person)
   end 
 end
