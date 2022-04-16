@@ -6,7 +6,7 @@ document.addEventListener('turbolinks:load', function() {
   var calendarEl = document.getElementById('calendar');
 
   var calendar = new Calendar(calendarEl, {
-    plugins: [ dayGridPlugin, interactionPlugin ],
+    plugins: [ dayGridPlugin, interactionPlugin],
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
     firstDay: 1,
@@ -14,7 +14,7 @@ document.addEventListener('turbolinks:load', function() {
       myCustomButton: {
         text: 'みんなの投稿',
         click: function(){
-          open("GET", "/",false);
+          location.href = "/events/new";
         }
       }
     },
@@ -33,7 +33,23 @@ document.addEventListener('turbolinks:load', function() {
     dayCellContent: function(e) {
       e.dayNumberText = e.dayNumberText.replace('日', '');
     },
+    dateClick: function(e){ 
+      let date = new Date();
+      let month = date.getMonth() +1;
+      let day = date.getDate();
+      let days = (month,day);
+      location.href = `/events/new?date=${days}` ;
+    },
+    events = {
+      title: event_select_id,
+      start: date,
+    },
+    calendar.fullCalendar('renderEvent', eventData, true),
+    $('#calendar').fullCalendar('unselect'),
+    create_event(title, start, end);
+    events: '/events.json',
   });
+
 
   
   calendar.render();
