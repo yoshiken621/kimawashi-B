@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2022_04_14_085151) do
   end
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "date", null: false
     t.integer "events_select_id", null: false
     t.text "met_person"
     t.datetime "created_at", precision: 6, null: false

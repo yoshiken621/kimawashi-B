@@ -2,6 +2,13 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    respond_to do |format|
+      format.json{
+        render json:
+        @event.to_json(
+          only: [:event_select_id, :date]
+        )
+      }
   end
 
   def new
@@ -19,6 +26,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:image, :date, :events_select_id, :met_person)
+    params.require(:event).permit(:date, :image, :events_select_id, :met_person)
   end 
 end

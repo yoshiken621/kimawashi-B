@@ -4,4 +4,5 @@ class Event < ApplicationRecord
   has_one_attached :image
 
   validates :events_select_id, numericality: { other_than: 1, message: "出来事を選択してください"}
+  validates :date, presence: true
 end
