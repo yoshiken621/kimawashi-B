@@ -9,6 +9,7 @@ class EventsController < ApplicationController
           only: [:event_select_id, :date]
         )
       }
+    end
   end
 
   def new
