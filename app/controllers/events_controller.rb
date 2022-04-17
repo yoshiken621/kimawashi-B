@@ -2,14 +2,6 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    respond_to do |format|
-      format.json{
-        render json:
-        @event.to_json(
-          only: [:event_select_id, :date]
-        )
-      }
-    end
   end
 
   def new

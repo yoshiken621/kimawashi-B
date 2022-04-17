@@ -34,20 +34,13 @@ document.addEventListener('turbolinks:load', function() {
       e.dayNumberText = e.dayNumberText.replace('日', '');
     },
     dateClick: function(e){ 
-      let date = new Date();
-      let month = date.getMonth() +1;
-      let day = date.getDate();
-      let days = (month,day);
-      location.href = `/events/new?date=${days}` ;
+      // let date = new Date();
+      // let month = date.getMonth() +1;
+      // let day = date.getDate();
+      console.log(e,"event");
+      console.log(e.dateStr,"dateStr");
+      location.href = `/events/new?date=${e.dateStr}` ;
     },
-    events = {
-      title: event_select_id,
-      start: date,
-    },
-    calendar.fullCalendar('renderEvent', eventData, true),
-    $('#calendar').fullCalendar('unselect'),
-    create_event(title, start, end);
-    events: '/events.json',
   });
 
 
