@@ -5,7 +5,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 document.addEventListener('turbolinks:load', function() {
   var calendarEl = document.getElementById('calendar');
 
-  var calendar = new Calendar(calendarEl, {
+  const calendar = new Calendar(calendarEl, {
     plugins: [ dayGridPlugin, interactionPlugin],
     locale: 'ja',
     timeZone: 'Asia/Tokyo',
@@ -28,17 +28,15 @@ document.addEventListener('turbolinks:load', function() {
       month: '月',
     },
     
+    events: '/events.json',
+    
+
     expandRows: true,
     height: "auto",
     dayCellContent: function(e) {
       e.dayNumberText = e.dayNumberText.replace('日', '');
     },
     dateClick: function(e){ 
-      // let date = new Date();
-      // let month = date.getMonth() +1;
-      // let day = date.getDate();
-      console.log(e,"event");
-      console.log(e.dateStr,"dateStr");
       location.href = `/events/new?date=${e.dateStr}` ;
     },
   });
