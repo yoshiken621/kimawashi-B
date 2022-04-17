@@ -20,12 +20,25 @@ class EventsController < ApplicationController
     end 
   end
 
+  
+  def show
+    @event = Event.find(params[:id])
+  end
+  
   def edit
     @event = Event.find(params[:id])
   end
 
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to action: :show
+    else
+      render :edit
+    end
+  end
   private
   def event_params
-    params.require(:event).permit(:date, :image, :events_select_id, :met_person)
+    params.require(:event).permit(:date, :image, :events_select_id, :met_person, :id)
   end 
 end

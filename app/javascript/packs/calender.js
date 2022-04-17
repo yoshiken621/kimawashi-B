@@ -1,6 +1,7 @@
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import { isInt } from 'fullcalendar';
 
 document.addEventListener('turbolinks:load', function() {
   var calendarEl = document.getElementById('calendar');
@@ -27,7 +28,7 @@ document.addEventListener('turbolinks:load', function() {
       today: '今日',
       month: '月',
     },
-    
+
     events: '/events.json',
     
 
@@ -37,7 +38,11 @@ document.addEventListener('turbolinks:load', function() {
       e.dayNumberText = e.dayNumberText.replace('日', '');
     },
     dateClick: function(e){ 
-      location.href = `/events/new?date=${e.dateStr}` ;
+        // location.href = `/events/new?date=${e.dateStr}` ;
+      end
+    },
+    eventClick: function(e){
+      location.href = `/events/${e.event.id}`
     },
   });
 
