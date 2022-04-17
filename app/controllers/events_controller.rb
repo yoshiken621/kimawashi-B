@@ -6,6 +6,9 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    if params[:date] != nil then
+      @event.date = params[:date]
+    end
   end
 
   def create
@@ -15,6 +18,10 @@ class EventsController < ApplicationController
     else
       render :new
     end 
+  end
+
+  def edit
+    @event = Event.find(:id)
   end
 
   private

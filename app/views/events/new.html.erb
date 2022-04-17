@@ -1,12 +1,3 @@
-<script>
-  <%# var date = location.search.sbstring(1);
-  var value = date.sprit('=');
-  @value = value[1]
-  console.log("a") %>
-  ${function  () {
-    console.log("aa")
-  }}
-</script>
 
 <div class="event-add-main">
   <h2 class="event-add-title">服装記録</h2>
@@ -14,7 +5,7 @@
   <div class="date-imput">
     <div class="record-text">
       日付
-      <%= f.date_field :date, value: @value %>
+       <%= f.date_field :date %>
     </div>
 
   <div class="img-upload">
