@@ -41,6 +41,13 @@ class EventsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    event = Event.find(params[:id])
+    if event.destroy
+      redirect_to root_path
+    end
+  end
   private
   def event_params
     params.require(:event).permit(:date, :image, :events_select_id, :met_person, :id, :checkbox)

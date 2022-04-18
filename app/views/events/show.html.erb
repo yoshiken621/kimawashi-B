@@ -3,3 +3,4 @@
 <%= @event.met_person %>
 <%= event_params[@event.events_select_id]%>
 <%= link_to '編集', "/events/#{@event.id}/edit" %>
+<%= link_to '削除', "/events/#{@event.id}", method: :delete %>
