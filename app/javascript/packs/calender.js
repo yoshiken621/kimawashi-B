@@ -15,7 +15,7 @@ document.addEventListener('turbolinks:load', function() {
       myCustomButton: {
         text: 'みんなの投稿',
         click: function(){
-          location.href = "/events/new";
+          location.href = "/index";
         }
       }
     },
@@ -42,6 +42,26 @@ document.addEventListener('turbolinks:load', function() {
     },
     eventClick: function(e){
       location.href = `/events/${e.event.id}`
+    },
+
+    eventContent: function(e) {
+      let arrayOfDomNodes = []
+      let titleEvent = document.createElement('div')
+      if(e.event._def.title) {
+        titleEvent.innerHTML = e.event._def.title
+        titleEvent.classList = "fc-event-title fc-sticky"
+      }
+
+      let imgEventWrap = document.createElement('div')
+      if(e.event.extendedProps.image_url) {
+        let imgEvent = '<img src="'+e.event.extendedProps.image_url+'" >'
+        imgEventWrap.classList = "fc-event-img"
+        imgEventWrap.innerHTML = imgEvent;
+      }
+
+      arrayOfDomNodes = [ titleEvent,imgEventWrap ]
+
+      return { domNodes: arrayOfDomNodes }
     },
   });
 

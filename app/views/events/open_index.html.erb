@@ -1,0 +1,7 @@
+<div class="image-index">
+  <% @events.each do |event| %>
+    <% if event.checkbox == true %>
+      <%= image_tag event.image, class: 'images' %>
+    <% end %>
+  <% end %>
+</div>

@@ -4,6 +4,10 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def open_index
+    @events = Event.order("created_at DESC")
+  end 
+
   def new
     @event = Event.new
     if params[:date] != nil then
