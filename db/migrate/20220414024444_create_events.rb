@@ -4,6 +4,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.date     :date                 ,null: false
       t.integer  :events_select_id     ,null: false
       t.text     :met_person
+      t.boolean  :checkbox
       t.timestamps
     end
   end

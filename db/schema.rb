@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2022_04_14_085151) do
     t.date "date", null: false
     t.integer "events_select_id", null: false
     t.text "met_person"
+    t.boolean "checkbox"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

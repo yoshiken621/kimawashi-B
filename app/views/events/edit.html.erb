@@ -30,6 +30,10 @@
     </div>
     <%= f.text_area :met_person, class:"met-person-text" %>
   </div>
+  <div class="check-box">
+    <%= f.label :checkbox, "服装を公開しますか？" %>
+    <%= f.check_box :checkbox, id: "check_box" %>
+  </div>
   <div class="record-btn-contents">_
     <%= f.submit "編集完了" ,class:"record-btn" %>
   </div>

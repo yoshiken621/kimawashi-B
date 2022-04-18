@@ -12,9 +12,7 @@
     <div class="record-text">
       服装
       <div class="click-upload">
-        <p>
-          クリックして写真をアップロード
-        </p>
+        <%= f.label :image, "写真をアップロード" %>
         <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
@@ -30,6 +28,10 @@
       会った人
     </div>
     <%= f.text_area :met_person, class:"met-person-text" %>
+  </div>
+  <div class="check-box">
+    <%= f.label :checkbox, "服装を公開しますか？" %>
+    <%= f.check_box :checkbox, id: "check_box" %>
   </div>
   <div class="record-btn-contents">_
     <%= f.submit "登録する" ,class:"record-btn" %>

@@ -38,8 +38,7 @@ document.addEventListener('turbolinks:load', function() {
       e.dayNumberText = e.dayNumberText.replace('日', '');
     },
     dateClick: function(e){ 
-        // location.href = `/events/new?date=${e.dateStr}` ;
-      end
+      location.href = `/events/new?date=${e.dateStr}` ;
     },
     eventClick: function(e){
       location.href = `/events/${e.event.id}`
