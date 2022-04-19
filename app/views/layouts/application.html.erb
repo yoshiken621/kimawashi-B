@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kimawashi</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %> 
@@ -8,20 +10,43 @@
      <% stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/shards.min.css">
   </head>
-  <header>
-    <nav class="nav nav-pills nav-fill" style="background-color: #fff;">
-      <button type="button" class="btn btn-primary"><h1 class="nav-link" ><a href="/">KIMAWASHI</a></h1></button>
-      <% if user_signed_in? %>
-        <a class="nav-link" href="/users/edit">ユーザー情報編集</a>
-        <a class="nav-link" href="/users/sign_out">ログアウト</a>
-      <% else %>
-        <a class="nav-link" href="/users/sign_up">新規登録</a>
-        <a class="nav-link" href="/users/sign_in" >ログイン</a>
-      <% end %>
+  <header class="text-white bg-dark">
+    <nav class="navbar navbar-light bg-light p-3">
+      <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+          <a class="navbar-brand" href="/">
+              KIMAWASHI
+          </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+            <% if user_signed_in? %>
+              <a>ログイン中</a>
+            <% else %>
+              <a>未ログイン</a>
+            <% end %>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <% if user_signed_in? %>
+            <li><a class="dropdown-item" href="/users/edit">ユーザー情報編集</a></li>
+            <li><a class="dropdown-item" href="/users/sign_out">ログアウト</a></li>
+          <% else %>
+            <li><a class="dropdown-item" href="/users/sign_up">新規登録</a></li>
+            <li><a class="dropdown-item" href="/users/sign_in" >ログイン</a></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
     </nav> 
   </header>
-  <body class='bg-dark'style="background-color: cyan">
+  <body class='bg-light'style="background-color: cyan">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/shards.min.js"></script>
     <%= yield %>
   </body>
 </html>

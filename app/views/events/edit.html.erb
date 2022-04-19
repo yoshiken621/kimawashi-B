@@ -1,41 +1,36 @@
-<div class="event-add-main">
-  <h2 class="event-add-title">服装記録</h2>
+<div class="row g-3">
+  <div class="col-sm-10">
+    <h6 class="display-1">情報編集</h6>
+  <div class="col-sm-10">
   <%= form_with model: @event, local: true do |f| %>
-  <div class="date-imput">
-    <div class="record-text">
-      日付
-       <%= f.date_field :date %>
-    </div>
-
-  <div class="img-upload">
-    <div class="record-text">
-      服装
-      <div class="click-upload">
-        <p>
-          クリックして写真をアップロード
-        </p>
+  <div class="col-md-6">
+    <label class="form-label">日付け</label>
+      <%= f.date_field :date %>
+  </div>
+  <div class="form-floating mb-3">
+    <div class="col-md-6">
+      <label class="form-label">服装をアップロード</label>
         <%= f.file_field :image, id:"item-image" %>
-      </div>
     </div>
   </div>
-  <div class="events-selection">
-    <div class="record-text">
-      出来事
+  <div class="mb-3">
+    <label class="col-sm-2 col-form-label">出来事</label>
+      <%= f.collection_select(:events_select_id, EventsSelect.all, :id, :name, {}, {class:"select-box", id:"events"}) %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label .text-nowrap">会った人</label>
+      <%= f.text_area :met_person, class:"met-person-text" %>
+  </div>
+ <div class="form-floating mb-3">
+    <div class="form-check">
+      <%= f.label :checkbox, "この服装を公開しますか？" %>
+      <%= f.check_box :checkbox, id: "check_box" %>
     </div>
-    <%= f.collection_select(:events_select_id, EventsSelect.all, :id, :name, {}, {class:"select-box", id:"events"}) %>
   </div>
-  <div class="met-person">
-    <div class="record-text">
-      会った人
-    </div>
-    <%= f.text_area :met_person, class:"met-person-text" %>
-  </div>
-  <div class="check-box">
-    <%= f.label :checkbox, "服装を公開しますか？" %>
-    <%= f.check_box :checkbox, id: "check_box" %>
-  </div>
-  <div class="record-btn-contents">_
-    <%= f.submit "編集完了" ,class:"record-btn" %>
+  <div class="record-btn-contents">
+      <%= f.submit "編集完了" ,class:"btn btn-primary"%>
   </div>
   <% end %>
 </div>
+
