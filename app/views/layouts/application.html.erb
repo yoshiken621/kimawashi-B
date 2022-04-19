@@ -5,15 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %> 
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+     <% stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
   </head>
   <header>
-    <div class="title">
-    <%= link_to 'KIMAWASHI', root_path, class:"title-btn"%>
-    </div>
+    <nav class="nav nav-pills nav-fill" style="background-color: indigo">
+      <button type="button" class="btn btn-primary input-btn-font-size; 40" aria-current="page" href="/">KIMAWASHI</button>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </nav> 
   </header>
-  <body>
+  <body class='bg-dark'style="background-color: cyan">
     <%= yield %>
   </body>
 </html>

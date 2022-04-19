@@ -1,40 +1,39 @@
 
-<div class="event-add-main">
-  <h2 class="event-add-title">服装記録</h2>
+<div class="bg-dark">
+  <h1 class="display-1">服装記録</h1>
   <%= form_with model: @event, local: true do |f| %>
-  <div class="date-imput">
-    <div class="record-text">
-      日付
+  <div class="form-floating mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">日付け</label>
+    <div class="col-sm-10">
        <%= f.date_field :date %>
     </div>
+  </div>
+  <div class="form-floating mb-3">
+    <div class="col-sm-10">
+      <%= f.label :image, "服装をアップロード" %>
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+  <div class="form-floating mb-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">出来事</label>
+    <%= f.collection_select(:events_select_id, EventsSelect.all, :id, :name, {}, {class:"select-box", id:"events"}) %>
+  </div>
 
-  <div class="img-upload">
-    <div class="record-text">
-      服装
-      <div class="click-upload">
-        <%= f.label :image, "写真をアップロード" %>
-        <%= f.file_field :image, id:"item-image" %>
+  <div class="form-floating mb-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">会った人</label>
+    <%= f.text_area :met_person, class:"met-person-text" %>
+  </div>
+ <div class="form-floating mb-3">
+    <div class="col-sm-10 offset-sm-2">
+      <div class="form-check">
+        <%= f.label :checkbox, "服装を公開しますか？" %>
+        <%= f.check_box :checkbox, id: "check_box" %>
       </div>
     </div>
   </div>
-  <div class="events-selection">
-    <div class="record-text">
-      出来事
-    </div>
-    <%= f.collection_select(:events_select_id, EventsSelect.all, :id, :name, {}, {class:"select-box", id:"events"}) %>
-  </div>
-  <div class="met-person">
-    <div class="record-text">
-      会った人
-    </div>
-    <%= f.text_area :met_person, class:"met-person-text" %>
-  </div>
-  <div class="check-box">
-    <%= f.label :checkbox, "服装を公開しますか？" %>
-    <%= f.check_box :checkbox, id: "check_box" %>
-  </div>
   <div class="record-btn-contents">_
-    <%= f.submit "登録する" ,class:"record-btn" %>
+    <%= f.submit "登録する" ,class:"btn btn-primary"%>
   </div>
   <% end %>
 </div>
+
