@@ -2,12 +2,13 @@
 
 events_table
 
-| Column                | Type    | Options                   |
-| ------------------------------------------------------------|
-| date                  | string  |                           |
-| events_select_id      | integer | null: false               |
-| met_person            | text    |                           |
-| checkbox              | boolean |                           |
+| Column                | Type       | Options                   |
+| ---------------------------------------------------------------|
+| date                  | string     |                           |
+| events_select_id      | integer    | null: false               |
+| met_person            | text       |                           |
+| checkbox              | boolean    |                           |
+| user                  | references | null: false foreign_key: true  |
 
 belongs_to user
 

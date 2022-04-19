@@ -2,6 +2,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :age_select
   belongs_to :sex_select
+  has_many :events
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
