@@ -32,7 +32,9 @@
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <% if user_signed_in? %>
             <li><a class="dropdown-item" href="/users/edit">ユーザー情報編集</a></li>
-            <li><a class="dropdown-item" href="/users/sign_out">ログアウト</a></li>
+            <li>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </li>
           <% else %>
             <li><a class="dropdown-item" href="/users/sign_up">新規登録</a></li>
             <li><a class="dropdown-item" href="/users/sign_in" >ログイン</a></li>
