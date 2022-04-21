@@ -30,7 +30,7 @@ const calendar = () => {
         month: '月',
       },
 
-      events: '/events.json',
+      // events: '/events.json',
       
 
       expandRows: true,
