@@ -6,7 +6,7 @@
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("channels")
-require("../packs/calender")
+// require("../packs/calender")
 require('jquery')
 require('bootstrap-sprockets')
 // require('jquery_ujs')

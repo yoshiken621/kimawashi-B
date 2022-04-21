@@ -3,9 +3,12 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { isInt } from 'fullcalendar';
 
-const calendar = () => {
+const calendarEvent = () => {
   document.addEventListener('turbolinks:load', function() {
     var calendarEl = document.getElementById('calendar');
+    if (calendarEl === undefined || calendarEl === null) {
+      return;
+    }
 
     const calendar = new Calendar(calendarEl, {
       plugins: [ dayGridPlugin, interactionPlugin],
@@ -72,4 +75,4 @@ const calendar = () => {
   });
 };
 
-window.addEventListener('load', calendar);
+window.addEventListener('load', calendarEvent);
