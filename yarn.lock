@@ -920,7 +920,7 @@
     preact "^10.0.5"
     tslib "^2.1.0"
 
-"@fullcalendar/daygrid@^5.11.0":
+"@fullcalendar/daygrid@^5.11.0", "@fullcalendar/daygrid@~5.11.0":
   version "5.11.0"
   resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-5.11.0.tgz#fd10391dfc2b6caa3538e0826f8d8f3e83e0e22a"
   integrity sha512-Ybh/dfHn/VL0qOVIRVyJc9I8oYiqqHl6xQONk8xXCe456QbPzAQLsAxpLLJLH+3smWNCfoQgvDKzR9e9XTzLMQ==
@@ -942,6 +942,15 @@
   integrity sha512-zrlqGkgWS0y//Ym+Zf5txh7zhn8UOUtAQ263ZuXdAEJSRDc68GAz+fseDwnsZ1itv+sE86dfmjww9yIt740akg==
   dependencies:
     "@fullcalendar/common" "~5.11.0"
+    tslib "^2.1.0"
+
+"@fullcalendar/timegrid@^5.11.0":
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/timegrid/-/timegrid-5.11.0.tgz#b41153ef301f21f8c1e19a65023493c48c8bacf5"
+  integrity sha512-GNy+/PwAj510PS4Fu18Mf/CytNBVftFU7M8XwsUXOCJ6ouyroHZje0a7k5cH/nE5IQ6NJZfH2eAPBlxGath1MQ==
+  dependencies:
+    "@fullcalendar/common" "~5.11.0"
+    "@fullcalendar/daygrid" "~5.11.0"
     tslib "^2.1.0"
 
 "@gar/promisify@^1.0.1":
@@ -4826,6 +4835,11 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
+
+moment@^2.29.3:
+  version "2.29.3"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.3.tgz#edd47411c322413999f7a5940d526de183c031f3"
+  integrity sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==
 
 move-concurrently@^1.0.1:
   version "1.0.1"

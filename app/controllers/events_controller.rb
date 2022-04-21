@@ -1,9 +1,11 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except:[:index, :show]
+ 
+  before_action :authenticate_user!
 
   def index
-    @events = Event.all
+    @events = Event.all.where(user_id: current_user.id)
   end
+
 
   def open_index
     @events = Event.order("created_at DESC")
