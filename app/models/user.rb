@@ -8,5 +8,5 @@ class User < ApplicationRecord
   
   validates :age_select_id, numericality: { other_than: 1, message: "年齢を選択してください"}
   validates :sex_select_id, numericality: { other_than: 1, message: "性別を選択してください"}
-  validates :nickname, presence: true
+  validates :nickname, presence: true, uniqueness: { message: "このニックネームは既に使われています"}
 end
