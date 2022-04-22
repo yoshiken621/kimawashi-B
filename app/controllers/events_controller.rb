@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   end
 
 
-  def open_index
+  def event
     @events = Event.order("created_at DESC")
   end 
 
