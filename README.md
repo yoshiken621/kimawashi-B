@@ -11,6 +11,7 @@ events_table
 | user                  | references | null: false foreign_key: true  |
 
 belongs_to user
+has_many likes
 
 users_table
 
@@ -23,3 +24,14 @@ users_table
 | encrypted_password    | string  | null: false               |
 
 has_many :events
+has_many :likes
+
+likes_table
+
+| Column                | Type       | Options                        |
+| --------------------------------------------------------------------|
+| user                  | references | null: false foreign_key: true  |
+| event                 | references | null: false foreign_key: true  |
+
+belong_to :user
+belongs_to event
