@@ -6,6 +6,9 @@ class EventsController < ApplicationController
     @events = Event.all.where(user_id: current_user.id)
   end
 
+  def personal
+    @events = Event.where(user_id: current_user.id).order("created_at DESC")
+  end
 
   def event
     @events = Event.order("created_at DESC")
