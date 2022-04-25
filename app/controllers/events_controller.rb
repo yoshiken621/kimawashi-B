@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
  
   before_action :authenticate_user!
+  before_action :set_q, only: [:event, :search]
 
   def index
     @events = Event.all.where(user_id: current_user.id)
@@ -13,6 +14,10 @@ class EventsController < ApplicationController
   def event
     @events = Event.order("created_at DESC")
   end 
+  
+  def search
+    @results = @q.result.order("created_at DESC")
+  end
 
   def new
     @event = Event.new
@@ -30,7 +35,6 @@ class EventsController < ApplicationController
     end 
   end
 
-  
   def show
     @event = Event.find(params[:id])
   end
@@ -58,4 +62,8 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:date, :image, :events_select_id, :met_person, :id, :checkbox).merge(user_id: current_user.id)
   end 
+
+  def set_q
+    @q = Event.ransack(params[:q])
+  end
 end
