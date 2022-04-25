@@ -1,0 +1,7 @@
+<div class="image-index">
+  <% @results.each do |event| %>
+    <div id="event_<%= event.id %>">
+      <%= render 'event', event: event %>
+    </div>
+  <% end %>
+</div>
